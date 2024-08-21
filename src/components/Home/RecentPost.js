@@ -1,6 +1,7 @@
 import React from "react";
 import { sortBlogs } from "@/src/utils";
 import Link from "next/link";
+import BlogLayoutThree from "../Blog/BlogLayoutThree";
 
 const RecentPost = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
@@ -21,7 +22,7 @@ const RecentPost = ({ blogs }) => {
         {sortedBlogs.slice(5, 11).map((blog, index) => {
           return (
             <article className="col-span-1 row-span-1 relative">
-              blog layout 3
+              <BlogLayoutThree blog={blog} />
             </article>
           );
         })}
