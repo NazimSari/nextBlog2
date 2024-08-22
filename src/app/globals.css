@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+h1 > a > .icon-link:before,
+h2 > a > .icon-link:before,
+h3 > a > .icon-link:before {
+  content: "#";
+  font-size: 0.8rem;
+}
+code {
+  counter-reset: line;
+}
+
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 2rem;
+}
+
+code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 3rem;
+}
+
+[data-highlighted-line] {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  padding: 2px;
+  padding-left: 0;
+  padding-right: 4px;
+  border-radius: 2px;
+  border-left: 2px solid #7b00d3;
+}

@@ -3,6 +3,7 @@
     "paths": {
       "@/*": ["./*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
-    }
+    },
+    "baseUrl": "."
   }
 }
