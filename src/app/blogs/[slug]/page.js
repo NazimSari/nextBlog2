@@ -9,11 +9,11 @@ export async function generateStaticParams() {
   const blog = allBlogs.map((blog) => ({
     slug: blog._raw.flattenedPath,
   }));
+  return blog;
 }
 export default function BlogPage({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
   const slugger = new GithubSlugger(); // Slugger örneği oluşturma
-  const slug = slugger.slug(blog.tags[0]);
 
   return (
     <article>
